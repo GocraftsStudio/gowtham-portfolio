@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gowtham B | Portfolio</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0f;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      animation: slideDown 0.6s ease-out forwards;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .hire-btn {
+      display: none;
+      background: white;
+      color: black;
+      font-weight: 500;
+      border: none;
+      border-radius: 9999px;
+      padding: 8px 24px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .hire-btn:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: scale(1.05);
+    }
+
+    .menu-btn {
+      display: none;
+      color: white;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      max-height: 0;
+      opacity: 0;
+    }
+
+    .mobile-menu a {
+      padding: 12px 24px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover {
+      color: white;
+    }
+
+    .mobile-menu .hire-btn.mobile {
+      display: block;
+      width: calc(100% - 48px);
+      margin: 16px 24px;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+      .hire-btn {
+        display: block;
+      }
+      .menu-btn {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .nav-links {
+        display: none;
+      }
+      .hire-btn {
+        display: none;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .mobile-menu.open {
+        display: flex;
+        max-height: 500px;
+        opacity: 1;
+      }
+    }
+
+    /* Section Styles */
+    section {
+      padding: 120px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    section p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">GOWTHAM B</div>
+
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button class="hire-btn">Hire Me</button>
+      <button class="menu-btn" id="menuToggle">☰</button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="hire-btn mobile">Hire Me</button>
+    </div>
+  </nav>
+
+  <!-- Sections -->
+  <section id="work">
+    <h2>My Work</h2>
+    <p>Selected UI/UX projects and creative designs that blend functionality with aesthetic appeal. Each project focuses on enhancing user experience through thoughtful interaction design.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p>UI/UX Design Trainee at Zero Schools | Processor at Wipro. Experienced in creating user flows, wireframes, and prototypes using Figma, Adobe XD, and Miro. Passionate about human-centered design.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Gowtham B — a passionate UI/UX designer from Coimbatore. I create intuitive and engaging digital experiences by combining creativity, empathy, and clean design systems.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 gowthamboothal22@gmail.com<br>📱 +91 6379148128</p>
+  </section>
+
+  <footer>
+    © 2025 Gowtham B. All rights reserved.
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
